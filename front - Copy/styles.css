@@ -1,0 +1,13 @@
+body {
+  font-size: 32px;
+}
+
+.light {
+  background: pink;
+  color: rgb(88, 100, 195);
+}
+
+.dark {
+  background: black;
+  color: white;
+}
