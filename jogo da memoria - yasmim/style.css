@@ -1,0 +1,226 @@
+:root {
+  --rosa: #ff4fa3;
+  --vermelho: #ff3b3b;
+  --verde: #32c96f;
+  --verde-claro: #b6ffcb;
+  --branco: #ffffff;
+  --escuro: #2b1020;
+  --sombra: rgba(0, 0, 0, 0.25);
+  --borda: 18px;
+  --tempo: 0.3s;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  font-family: 'Trebuchet MS', Arial, sans-serif;
+  background: linear-gradient(
+    135deg,
+    var(--rosa),
+    var(--vermelho),
+    var(--verde)
+  );
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--branco);
+}
+
+.container {
+  width: 100%;
+  padding: 20px;
+}
+
+.card-principal {
+  max-width: 650px;
+  margin: auto;
+  padding: 25px;
+  border-radius: var(--borda);
+  background: rgba(43, 16, 32, 0.85);
+  box-shadow: 0 15px 35px var(--sombra);
+  animation: aparecer 0.8s ease;
+}
+
+.topo {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.topo h1 {
+  font-size: 36px;
+  margin-bottom: 5px;
+}
+
+.topo p {
+  font-size: 16px;
+  color: var(--verde-claro);
+}
+
+.info-jogo {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 25px;
+}
+
+.info {
+  background: rgba(255, 255, 255, 0.12);
+  padding: 10px 14px;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.info span {
+  display: block;
+  font-size: 12px;
+  color: #ffd6e8;
+}
+
+.info strong {
+  font-size: 16px;
+}
+
+.btn-reiniciar {
+  border: none;
+  padding: 10px 18px;
+  border-radius: 12px;
+  background: var(--verde);
+  color: var(--branco);
+  font-weight: bold;
+  cursor: pointer;
+  transition: var(--tempo);
+}
+
+.btn-reiniciar:hover {
+  background: var(--rosa);
+  transform: scale(1.08);
+}
+
+.btn-reiniciar:focus {
+  outline: 3px solid var(--branco);
+}
+
+.tabuleiro {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+
+.carta {
+  height: 95px;
+  border: none;
+  border-radius: 16px;
+  font-size: 40px;
+  cursor: pointer;
+  transition: var(--tempo);
+  box-shadow: 0 8px 15px var(--sombra);
+}
+
+.carta:hover {
+  transform: translateY(-6px);
+}
+
+.carta:focus {
+  outline: 3px solid var(--verde-claro);
+}
+
+.fechada {
+  background: linear-gradient(135deg, var(--rosa), var(--vermelho));
+  color: var(--branco);
+  font-weight: bold;
+}
+
+.aberta {
+  background: var(--branco);
+  color: var(--escuro);
+  transform: rotateY(180deg);
+}
+
+.encontrada {
+  background: var(--verde-claro);
+  border: 3px solid var(--verde);
+  color: var(--escuro);
+  animation: brilho 1s infinite alternate;
+}
+
+.erro {
+  background: #ffe1e1;
+  border: 3px solid var(--vermelho);
+  color: var(--escuro);
+  animation: tremer 0.4s;
+}
+
+.dica {
+  margin-top: 20px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.12);
+  padding: 12px;
+  border-radius: 12px;
+  color: var(--verde-claro);
+  font-size: 14px;
+}
+
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes brilho {
+  from {
+    box-shadow: 0 0 8px var(--verde);
+  }
+
+  to {
+    box-shadow: 0 0 22px var(--verde-claro);
+  }
+}
+
+@keyframes tremer {
+  0% {
+    transform: translateX(0);
+  }
+
+  25% {
+    transform: translateX(-6px);
+  }
+
+  50% {
+    transform: translateX(6px);
+  }
+
+  75% {
+    transform: translateX(-6px);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@media (max-width: 500px) {
+  .topo h1 {
+    font-size: 28px;
+  }
+
+  .carta {
+    height: 75px;
+    font-size: 30px;
+  }
+
+  .card-principal {
+    padding: 18px;
+  }
+}
