@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>A Casa do Dragão | Assinatura Max</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="site-nav" aria-label="Navegação principal">
+        <a class="brand" href="#inicio" aria-label="Voltar ao início">
+          <img src="images/hbomax.avif" alt="HBO Max" />
+        </a>
+
+        <a class="nav-link" href="#planos">Planos</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" id="inicio" aria-labelledby="hero-title">
+        <img
+          class="hero-characters"
+          src="images/hero-desktop-characters.avif"
+          alt="Personagens de House of the Dragon diante do Trono de Ferro"
+        />
+
+        <div class="hero-content">
+          <p class="eyebrow">HBO Original</p>
+          <h1 id="hero-title">A Casa do Dragão</h1>
+          <p class="hero-copy">
+            Entre na disputa pelo Trono de Ferro com uma assinatura Max
+            inspirada em House of the Dragon. Escolha sua casa, informe seu
+            e-mail e confirme seu plano.
+          </p>
+          <a class="hero-button" href="#planos">Ver planos</a>
+        </div>
+      </section>
+
+      <section class="plans-section" id="planos" aria-labelledby="plans-title">
+        <div class="section-heading">
+          <p class="eyebrow">Assinaturas</p>
+          <h2 id="plans-title">Escolha o melhor plano para você</h2>
+        </div>
+
+        <div class="plans-grid">
+          <article class="plan-card">
+            <div>
+              <p class="plan-kicker">BASIC</p>
+              <h3>Plano Dragão Jovem</h3>
+              <p class="plan-summary">
+                Para acompanhar a guerra com simplicidade.
+              </p>
+            </div>
+
+            <ul class="features">
+              <li>2 dispositivos ao mesmo tempo</li>
+              <li>Resolução Full HD</li>
+              <li>Plano com anúncios</li>
+            </ul>
+
+            <div class="plan-footer">
+              <p class="price"><strong>R$29,90</strong><span>/mês</span></p>
+              <button
+                class="plan-button"
+                type="button"
+                data-plan="BASIC"
+                data-plan-label="Plano Dragão Jovem"
+              >
+                Escolher plano
+              </button>
+            </div>
+          </article>
+
+          <article class="plan-card plan-card-featured">
+            <span class="badge">Mais escolhido</span>
+
+            <div>
+              <p class="plan-kicker">STANDARD</p>
+              <h3>Plano Casa Targaryen</h3>
+              <p class="plan-summary">
+                Mais qualidade para assistir em família.
+              </p>
+            </div>
+
+            <ul class="features">
+              <li>2 dispositivos ao mesmo tempo</li>
+              <li>Resolução Full HD</li>
+              <li>30 downloads para curtir off-line</li>
+            </ul>
+
+            <div class="plan-footer">
+              <p class="price"><strong>R$44,90</strong><span>/mês</span></p>
+              <button
+                class="plan-button"
+                type="button"
+                data-plan="STANDARD"
+                data-plan-label="Plano Casa Targaryen"
+              >
+                Escolher plano
+              </button>
+            </div>
+          </article>
+
+          <article class="plan-card">
+            <div>
+              <p class="plan-kicker">PLATINUM</p>
+              <h3>Plano Fogo e Sangue</h3>
+              <p class="plan-summary">
+                A experiência completa da corte do dragão.
+              </p>
+            </div>
+
+            <ul class="features">
+              <li>4 dispositivos ao mesmo tempo</li>
+              <li>Resolução Full HD e 4K Ultra HD</li>
+              <li>100 downloads para curtir off-line</li>
+              <li>Áudio Dolby Atmos</li>
+            </ul>
+
+            <div class="plan-footer">
+              <p class="price"><strong>R$55,90</strong><span>/mês</span></p>
+              <button
+                class="plan-button"
+                type="button"
+                data-plan="PLATINUM"
+                data-plan-label="Plano Fogo e Sangue"
+              >
+                Escolher plano
+              </button>
+            </div>
+          </article>
+        </div>
+
+        <p
+          class="page-message"
+          id="page-message"
+          role="status"
+          aria-live="polite"
+        ></p>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>House of the Dragon na Max - landing page acadêmica.</p>
+    </footer>
+
+    <dialog class="modal" id="subscription-modal" aria-labelledby="modal-title">
+      <form class="modal-panel" id="subscription-form">
+        <button class="modal-close" type="button" aria-label="Fechar modal">
+          x
+        </button>
+
+        <p class="eyebrow">Confirmar assinatura</p>
+        <h2 id="modal-title">Finalize seu plano</h2>
+        <p class="selected-plan">
+          Plano escolhido:
+          <strong id="modal-plan-name">Plano</strong>
+        </p>
+
+        <label for="subscriber-email">E-mail</label>
+        <input
+          id="subscriber-email"
+          name="email"
+          type="email"
+          placeholder="seuemail@exemplo.com"
+          autocomplete="email"
+          required
+        />
+
+        <button class="submit-button" type="submit">
+          Confirmar assinatura
+        </button>
+        <p
+          class="form-message"
+          id="form-message"
+          role="status"
+          aria-live="polite"
+        ></p>
+      </form>
+    </dialog>
+  </body>
+</html>
